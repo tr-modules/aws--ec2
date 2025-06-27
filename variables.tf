@@ -1,5 +1,5 @@
 variable "name_prefix" {
-  type        = string
+  type = string
 }
 
 variable "ami_id" {
@@ -8,8 +8,8 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-  type        = string
-  default     = "t2.micro"
+  type    = string
+  default = "t2.micro"
 }
 
 variable "key_name" {
@@ -24,11 +24,11 @@ variable "create_key_pair" {
 }
 
 variable "vpc_id" {
-  type        = string
+  type = string
 }
 
 variable "subnet_id" {
-  type        = string
+  type = string
 }
 
 variable "create_security_group" {
@@ -75,4 +75,10 @@ variable "security_group_egress_rules" {
       cidr_blocks = ["0.0.0.0/0"]
     }
   ]
+}
+
+variable "iam_instance_profile_name" {
+  type        = string
+  default     = null
+  description = "IAM Instance Profile name for EC2. If null, no profile is attached."
 }
